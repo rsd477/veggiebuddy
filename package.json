@@ -1,0 +1,23 @@
+{
+  "name": "veggiebuddy",
+  "version": "1.0.0",
+  "description": "a lightweight plant management app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsd477/veggiebuddy.git"
+  },
+  "author": "Richard Scott",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rsd477/veggiebuddy/issues"
+  },
+  "homepage": "https://github.com/rsd477/veggiebuddy#readme",
+  "devDependencies": {
+    "express": "^4.18.1"
+  }
+}
