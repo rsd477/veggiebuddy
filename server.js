@@ -1,5 +1,5 @@
 let express = require("express");
-let exec = require("child_process");
+const { exec } = require("child_process");
 let port = 3000;
 let hostname = "localhost"
 let app = express();
