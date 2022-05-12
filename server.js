@@ -24,13 +24,32 @@ app.post("/settings", function (req, res) {
 				console.log(`stderr: ${stderr}`);
 				return;
 			}
-			console.log(`stdout: ${stdout}`);
 		});
+
+		exec(`fan ${body.fan_speed}`, (error, stdout, stderr) => {
+			if (error) {
+				console.log(`error: ${error.message}`);
+				return;
+			}
+			if (stderr) {
+				console.log(`stderr: ${stderr}`);
+				return;
+			}
+		});
+
+
 		return res.sendStatus(200);
 	} else {
 		return res.sendStatus(400);
 	}
 
+});
+
+app.get('/info', (req, res) => {
+	let temp = (Math.random()/2)*10 + 70;
+	let water = "full";
+	let pH = 6 + Math.random();
+	res.json({ temp:temp, lvl:water, ph:pH});
 });
 
 app.listen(port,() => {
