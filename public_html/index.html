@@ -5,9 +5,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link rel="icon" type="image/png" sizes="64x64" href="images/leaf.png">
-
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi">
   </head>
 
   <body>
@@ -42,10 +40,14 @@
             </div>
             <div class="card-action white-text">
               <p>brightness:</p>
-              <input type="range" id="brightness" min="0" max="100" />
+              <form action="#">
+                <input type="range" id="brightness" min="0" max="100" />
+              </form>
               <p>fan speed:</p>
-              <input type="range" id="fan speed" min="0" max="100" />
-              <a class="waves-effect blue-grey lighten-3 btn black-text">submit</a>
+              <form action="#">
+                <input type="range" id="fanSpeed" min="0" max="100" />
+              </form>
+              <a class="waves-effect blue-grey lighten-3 btn black-text" id="submit" onclick="submit()">submit</a>
             </div>
           </div>
         </div>
