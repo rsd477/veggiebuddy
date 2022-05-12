@@ -15,7 +15,6 @@ function submit(){
         }).then(function(res){
             if(res.status === 200){
                 console.log("success");
-                window.location.pathname = '/members'
             } else {
                 console.log("server error");
             }
