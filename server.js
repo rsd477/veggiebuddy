@@ -47,8 +47,9 @@ app.post("/settings", function (req, res) {
 
 app.get('/info', (req, res) => {
 	let temp = (Math.random()/2)*10 + 70;
+	temp.toFixed(2);
 	let water = "full";
-	let pH = 6 + Math.random();
+	let pH = 6 + Math.random().toFixed(2);
 	res.json({ temp:temp, lvl:water, ph:pH});
 });
 
