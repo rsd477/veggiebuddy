@@ -4,6 +4,9 @@ let port = 3000;
 let hostname = "localhost"
 let app = express();
 
+let fanSpeed = 0;
+let brightness = 100;
+
 app.use(express.static('public_html'));
 app.use(express.json());
 
@@ -15,7 +18,9 @@ app.post("/settings", function (req, res) {
 	let body = req.body;
 
 	if(body.hasOwnProperty("brightness") && body.hasOwnProperty("fan_speed")){
-		exec(`brightness ${body.brightness}`, (error, stdout, stderr) => {
+		brightness = body.brightness;
+		fanSpeed = body.fan_speed;
+		exec(`brightness ${brightness}`, (error, stdout, stderr) => {
 			if (error) {
 				console.log(`error: ${error.message}`);
 				return;
@@ -26,7 +31,7 @@ app.post("/settings", function (req, res) {
 			}
 		});
 
-		exec(`fan ${body.fan_speed}`, (error, stdout, stderr) => {
+		exec(`fan ${fanSpeed}`, (error, stdout, stderr) => {
 			if (error) {
 				console.log(`error: ${error.message}`);
 				return;
@@ -51,7 +56,7 @@ app.get('/info', (req, res) => {
 	let pH = 6 + Math.random().toFixed(2);
 	let state = "basil scab";
 	let link = "https://www.planetnatural.com/pest-problem-solver/plant-disease/apple-scab/";
-	res.json({ temp:temp, lvl:water, ph:pH, state:state, link:link});
+	res.json({ temp:temp, lvl:water, ph:pH, state:state, link:link, brightness:brightness, fan_speed:fanSpeed});
 });
 
 app.listen(port,() => {

@@ -58,5 +58,9 @@ function setInfo(){
         a.appendChild(linkText);
         a.href = res.link;
         predEl.appendChild(a);
+
+        document.getElementById("brightness").value = res.brightness;
+        document.getElementById("fanSpeed").value = res.fan_speed;
+
     }).catch((err)=>console.log(err));
 }
