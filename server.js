@@ -37,7 +37,6 @@ app.post("/settings", function (req, res) {
 			}
 		});
 
-
 		return res.sendStatus(200);
 	} else {
 		return res.sendStatus(400);
@@ -50,7 +49,9 @@ app.get('/info', (req, res) => {
 	temp = temp.toFixed(2);
 	let water = "full";
 	let pH = 6 + Math.random().toFixed(2);
-	res.json({ temp:temp, lvl:water, ph:pH});
+	let state = "basil scab";
+	let link = "https://www.planetnatural.com/pest-problem-solver/plant-disease/apple-scab/";
+	res.json({ temp:temp, lvl:water, ph:pH, state:state, link:link});
 });
 
 app.listen(port,() => {

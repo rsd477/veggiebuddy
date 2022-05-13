@@ -44,5 +44,19 @@ function setInfo(){
         document.getElementById("temp").textContent = res.temp + "°F";
         document.getElementById("level").textContent = res.lvl;
         document.getElementById("ph").textContent = res.ph + " pH";
+        let predEl = document.getElementById("prediction")
+        
+        let p1 = document.createElement('p');
+        p1.textContent = `ML model prediction ${res.state} = basil scab`;
+
+        let p2 = document.createElement('p');
+        p2.textContent = "\nHere are ways to better understand the current state of the plant and improve the plants health:";
+        predEl.appendChild(p1);
+        predEl.appendChild(p2);
+        let a = document.createElement('a');
+        let linkText = document.createTextNode("here");
+        a.appendChild(linkText);
+        a.href = res.link;
+        predEl.appendChild(a);
     }).catch((err)=>console.log(err));
 }
