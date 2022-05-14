@@ -47,10 +47,10 @@ function setInfo(){
         let predEl = document.getElementById("prediction")
         
         let p1 = document.createElement('p');
-        p1.textContent = `ML model prediction ${res.state} = basil scab`;
+        p1.textContent = `ML model prediction = ${res.state}`;
 
         let p2 = document.createElement('p');
-        p2.textContent = "\nHere are ways to better understand the current state of the plant and improve the plants health:";
+        p2.textContent = "\n\nHere are ways to better understand the current state of the plant and improve the plants health:";
         predEl.appendChild(p1);
         predEl.appendChild(p2);
         let a = document.createElement('a');

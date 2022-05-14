@@ -56,7 +56,7 @@ app.get('/info', (req, res) => {
 	let pH = 6 + Math.random();
 	pH = pH.toFixed(2);
 	let state = "basil scab";
-	let link = "https://www.planetnatural.com/pest-problem-solver/plant-disease/apple-scab/";
+	let link = "https://plantvillage.psu.edu/topics/basil/infos";
 	res.json({ temp:temp, lvl:water, ph:pH, state:state, link:link, brightness:brightness, fan_speed:fanSpeed});
 });
 
