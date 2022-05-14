@@ -74,7 +74,8 @@ function takepic(){
             return;
     })
     .then(function(){
-        setTimeout(location.reload(), 30000);
+        setTimeout(30000);
+        location.reload()
     }).catch((err)=>console.log(err));
 
 }
