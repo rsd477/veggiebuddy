@@ -69,7 +69,7 @@ function takepic(){
     console.log("taking picture");
 
     fetch("/takepic")
-    .then(function(){
+    .then(function(res){
         if(res.status == 200)
             return;
     })
