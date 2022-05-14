@@ -64,3 +64,7 @@ function setInfo(){
 
     }).catch((err)=>console.log(err));
 }
+
+function takepic(){
+    console.log("taking picture");
+}
