@@ -74,9 +74,7 @@ function takepic(){
             return;
     })
     .then(function(){
-        var container = document.getElementById("plant");
-        var content = container.innerHTML;
-        container.innerHTML= content; 
+        setTimeout(location.reload(), 30000);
     }).catch((err)=>console.log(err));
 
 }
