@@ -67,4 +67,16 @@ function setInfo(){
 
 function takepic(){
     console.log("taking picture");
+
+    fetch("/takepic")
+    .then(function(){
+        if(res.status == 200)
+            return;
+    })
+    .then(function(){
+        var container = document.getElementById("plant");
+        var content = container.innerHTML;
+        container.innerHTML= content; 
+    }).catch((err)=>console.log(err));
+
 }

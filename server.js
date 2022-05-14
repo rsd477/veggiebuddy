@@ -53,10 +53,27 @@ app.get('/info', (req, res) => {
 	let temp = (Math.random()/2)*10 + 70;
 	temp = temp.toFixed(2);
 	let water = "full";
-	let pH = 6 + Math.random().toFixed(2);
+	let pH = 6 + Math.random();
+	pH = pH.toFixed(2);
 	let state = "basil scab";
 	let link = "https://www.planetnatural.com/pest-problem-solver/plant-disease/apple-scab/";
 	res.json({ temp:temp, lvl:water, ph:pH, state:state, link:link, brightness:brightness, fan_speed:fanSpeed});
+});
+
+app.get('/takepic', (req, res) => {
+	exec("python3 /home/pi/Motorized_Focus_Camera/python/Autofocus.py", (error, stdout, stderr) => {
+		if (error) {
+			console.log(`error: ${error.message}`);
+			return res.sendStatus(400);
+		}
+		if (stderr) {
+			console.log(`stderr: ${stderr}`);
+			return res.sendStatus(400);
+		}
+	});
+
+	return res.sendStatus(200);
+	
 });
 
 app.listen(port,() => {
