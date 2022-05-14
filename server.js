@@ -55,7 +55,7 @@ app.get('/info', (req, res) => {
 	let water = "full";
 	let pH = 6 + Math.random();
 	pH = pH.toFixed(2);
-	let state = "basil scab";
+	let state = "basil spot";
 	let link = "https://plantvillage.psu.edu/topics/basil/infos";
 	res.json({ temp:temp, lvl:water, ph:pH, state:state, link:link, brightness:brightness, fan_speed:fanSpeed});
 });
